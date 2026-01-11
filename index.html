@@ -17,15 +17,15 @@
         .progress-bar { height: 10px; background: #444; border-radius: 5px; margin-bottom: 20px; overflow: hidden; }
         #progress-fill { height: 100%; background: var(--primary); width: 0%; transition: 0.3s; }
         #timer { font-size: 20px; font-weight: bold; color: var(--primary); margin-bottom: 10px; }
-        .question { font-size: 1.2rem; margin-bottom: 20px; min-height: 60px; }
+        .question { font-size: 1.1rem; margin-bottom: 20px; min-height: 70px; line-height: 1.4; }
         .options { display: grid; gap: 10px; }
-        button { background: #3d3d3d; border: 2px solid #555; color: white; padding: 15px; border-radius: 8px; cursor: pointer; transition: 0.2s; font-size: 1rem; text-align: left; }
+        button { background: #3d3d3d; border: 2px solid #555; color: white; padding: 12px; border-radius: 8px; cursor: pointer; transition: 0.2s; font-size: 0.95rem; text-align: left; }
         button:hover { background: #505050; border-color: var(--primary); }
         .correct { background: var(--success) !important; border-color: white !important; }
         .wrong { background: var(--danger) !important; border-color: white !important; }
-        #screen-pause, #screen-result, #screen-start { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--secondary); z-index: 10; flex-direction: column; justify-content: center; align-items: center; border-radius: 15px; }
-        .btn-main { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; text-align: center; margin-top: 20px; }
-        h1 { color: var(--primary); margin-bottom: 5px; }
+        #screen-pause, #screen-result, #screen-start { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--secondary); z-index: 10; flex-direction: column; justify-content: center; align-items: center; border-radius: 15px; padding: 20px; box-sizing: border-box; }
+        .btn-main { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 50px; font-weight: bold; text-align: center; margin-top: 20px; cursor: pointer; }
+        h1 { color: var(--primary); margin-bottom: 10px; font-size: 1.8rem; }
     </style>
 </head>
 <body>
@@ -33,13 +33,13 @@
 <div id="game-container">
     <div id="screen-start" style="display: flex;">
         <h1>ALWADI JOURNEY</h1>
-        <p>Are you ready, Heartist?</p>
+        <p>Welcome, Heartist. Ready to explore the hotel?</p>
         <button class="btn-main" onclick="startGame()">START JOURNEY</button>
     </div>
 
     <div id="screen-pause">
         <h1 id="milestone-title">Milestone Reached!</h1>
-        <p>Great progress. Take a breath.</p>
+        <p>Great progress. Keep moving forward.</p>
         <button class="btn-main" onclick="resumeGame()">CONTINUE JOURNEY</button>
     </div>
 
@@ -69,24 +69,24 @@
         { q: "The architecture of Alwadi uses a 'fractured roofscape' design specifically to blend in with:", a: ["The traditional rooftops of Souq Waqif", "West Bay Skyscrapers", "The Desert Rose", "Dhow Sails"], c: 0 },
         { q: "The following are F&B outlets found within Alwadi Hotel EXCEPT?", a: ["Le Colonial", "AtTeatude", "Belgian Café", "O'Glacee"], c: 2 },
         { q: "Which zero-emission transport system connects guests from the hotel entrance to the rest of the Msheireb district?", a: ["Msheireb Tram", "Doha Metro", "Electric Water Taxi", "Lusail LRT"], c: 0 },
-        { q: "What is the name of the premier, high-ceiling Ballroom found on Level 1?", a: ["Mashrabia", "Alwaha", "Heritage Hall", "Baraha"], c: 1 },
-        { q: "On which floor of the hotel are the dedicated guests' prayer rooms located?", a: ["Level 1", "Ground Floor", "Level 3", "Basement 1"], c: 0 },
-        { q: "In which area or level of the hotel is the General Manager’s office located?", a: ["Ground Floor", "Level 1", "Mezzanine", "Basement 1"], c: 1 },
-        { q: "In which area or level of the hotel is the Talent and Culture (T&C) department office located?", a: ["Mezzanine", "Basement 1 (B1)", "Level 2", "Basement 2 (B2)"], c: 1 },
-        { q: "The following offices/departments are located in Basement 1 (B1) EXCEPT?", a: ["Housekeeping (HK)", "Finance", "John Paul's office", "T&C department"], c: 2 },
-        { q: "True or false: Room 1902 is found in the 19th floor of Alwadi hotel?", a: ["True", "False"], c: 1 },
+        { q: "What is the name of the premier, high-ceiling Ballroom found on Floor 1?", a: ["Mashrabia", "Alwaha", "Heritage Hall", "Baraha"], c: 1 },
+        { q: "On which floor of the hotel are the dedicated guests' prayer rooms located?", a: ["Floor 1", "Ground Floor", "Floor 3", "Basement 1"], c: 0 },
+        { q: "In which area or floor of the hotel is the General Manager’s office found?", a: ["Ground Floor", "Floor 1", "Mezzanine", "Basement 1"], c: 1 },
+        { q: "In which area or floor of the hotel is the Talent and Culture (T&C) department office found?", a: ["Mezzanine", "Basement 1 (B1)", "Floor 2", "Basement 2 (B2)"], c: 1 },
+        { q: "The following offices/departments are found in Basement 1 (B1) EXCEPT?", a: ["Housekeeping (HK)", "Finance", "John Paul's office", "T&C department"], c: 2 },
+        { q: "True or false: Room 1902 is found on the 19th floor of Alwadi hotel?", a: ["True", "False"], c: 1 },
         { q: "True or False: There is at least one First Aid kit and a certified First Aider in every department of Alwadi.", a: ["True", "False"], c: 0 },
-        { q: "Where is an evacuation chair typically located in Alwadi Hotel?", a: ["Fireman's lift landing area ground floor", "Fireman's lift landing area Level 4", "In the main lobby", "Security department office"], c: 1 },
+        { q: "Where is an evacuation chair typically found in Alwadi Hotel?", a: ["Fireman's lift landing area ground floor", "Fireman's lift landing area Level 4", "In the main lobby", "Security department office"], c: 1 },
         { q: "For fire safety, how many total emergency staircases are built into Alwadi Hotel?", a: ["6", "8", "10", "12"], c: 2 },
         { q: "Which specific emergency staircase runs continuously from the Rooftop to Basement 4 (B4)?", a: ["Staircase 1", "Staircase 2", "Staircase 5", "Staircase 8"], c: 1 },
         { q: "In Qatar, 999 is the national emergency number for:", a: ["Police", "Fire", "Ambulance", "All of the above"], c: 3 },
         { q: "Which Alwadi's department is responsible for printing the guest in-house lists during evacuation?", a: ["Security", "Front Office (Reception)", "Housekeeping", "T&C department"], c: 1 },
-        { q: "Where exactly is the Alwadi Hotel primary external Assembly Point located?", a: ["Open space on Jassim bin Mohammed St", "Msheireb Metro Station", "B2 loading area", "Alwaha Ballroom"], c: 0 },
+        { q: "Where exactly is the Alwadi Hotel primary external Assembly Point found?", a: ["Open space on Jassim bin Mohammed St", "Msheireb Metro Station", "B2 loading area", "Alwaha Ballroom"], c: 0 },
         { q: "In First Aid, what does the acronym AED stand for?", a: ["Advanced Emergency Device", "Automated External Defibrillator", "Automatic Energy Delivery", "Ambient Emergency Detector"], c: 1 },
-        { q: "Which of the following is found in the Level 3 of the hotel?", a: ["M_Spa and M_Fit", "Swimming Pool", "O'Glacee Restaurant", "All of the above"], c: 3 },
+        { q: "Which of the following is found on Floor 3 of the hotel?", a: ["M_Spa and M_Fit", "Swimming Pool", "O'Glacee Restaurant", "All of the above"], c: 3 },
         { q: "Which Accor core value represents Alwadi employees who serve guests from the heart?", a: ["Worker", "Associate", "Partner", "Heartist"], c: 3 },
         { q: "What is the standard check-out time for guests at Alwadi Hotel Doha?", a: ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"], c: 1 },
-        { q: "The following are meeting rooms found on Alwadi Level 1 EXCEPT:", a: ["Baladi", "Harir", "Majlis", "Mashrabia"], c: 2 }
+        { q: "The following are meeting rooms found on Alwadi Floor 1 EXCEPT:", a: ["Baladi", "Harir", "Majlis", "Mashrabia"], c: 2 }
     ];
 
     let currentQ = 0;
@@ -104,10 +104,11 @@
             pauseGame();
             return;
         }
-        clearInterval(timer);
-        timeLeft = 30;
-        document.getElementById('timer').innerText = `Time: ${timeLeft}s`;
-        
+        startTimer();
+        displayCurrentQuestion();
+    }
+
+    function displayCurrentQuestion() {
         const qData = questions[currentQ];
         document.getElementById('question-text').innerText = qData.q;
         const optionsContainer = document.getElementById('options-container');
@@ -121,13 +122,18 @@
         });
 
         document.getElementById('progress-fill').style.width = `${(currentQ / questions.length) * 100}%`;
-        
+    }
+
+    function startTimer() {
+        clearInterval(timer);
+        timeLeft = 30;
+        document.getElementById('timer').innerText = `Time: ${timeLeft}s`;
         timer = setInterval(() => {
             timeLeft--;
             document.getElementById('timer').innerText = `Time: ${timeLeft}s`;
             if (timeLeft <= 0) {
                 clearInterval(timer);
-                checkAnswer(-1); // Timeout
+                checkAnswer(-1);
             }
         }, 1000);
     }
@@ -136,11 +142,10 @@
         clearInterval(timer);
         const correct = questions[currentQ].c;
         const btns = document.querySelectorAll('.options button');
-        
         btns.forEach(b => b.disabled = true);
 
         if (selected === correct) {
-            btn.classList.add('correct');
+            if (btn) btn.classList.add('correct');
             score++;
         } else {
             if (btn) btn.classList.add('wrong');
@@ -159,42 +164,18 @@
 
     function pauseGame() {
         document.getElementById('screen-pause').style.display = 'flex';
-        document.getElementById('milestone-title').innerText = `Milestone ${currentQ/10} Complete!`;
+        document.getElementById('milestone-title').innerText = `Milestone ${currentQ/10} Reached!`;
     }
 
     function resumeGame() {
         document.getElementById('screen-pause').style.display = 'none';
-        // Increment currentQ slightly to bypass the pause check
-        const temp = currentQ;
-        currentQ = -1; // Temp hack to load the next one
-        currentQ = temp; 
-        loadNextAfterPause();
-    }
-
-    function loadNextAfterPause() {
-        // Force the question to load by ignoring the pause check once
-        clearInterval(timer);
-        timeLeft = 30;
-        const qData = questions[currentQ];
-        document.getElementById('question-text').innerText = qData.q;
-        const optionsContainer = document.getElementById('options-container');
-        optionsContainer.innerHTML = '';
-        qData.a.forEach((opt, idx) => {
-            const btn = document.createElement('button');
-            btn.innerText = opt;
-            btn.onclick = () => checkAnswer(idx, btn);
-            optionsContainer.appendChild(btn);
-        });
-        timer = setInterval(() => {
-            timeLeft--;
-            document.getElementById('timer').innerText = `Time: ${timeLeft}s`;
-            if (timeLeft <= 0) { clearInterval(timer); checkAnswer(-1); }
-        }, 1000);
+        startTimer();
+        displayCurrentQuestion();
     }
 
     function showResult() {
         document.getElementById('screen-result').style.display = 'flex';
-        document.getElementById('final-score').innerText = `You scored ${score} out of ${questions.length}`;
+        document.getElementById('final-score').innerText = `Heartist Journey Score: ${score} / ${questions.length}`;
     }
 </script>
 </body>
